@@ -1,0 +1,12 @@
+*.pyc
+/.vscode/*
+.vscode/*
+/.vscode
+aws_env.env
+*.tar.gz
+# package directories
+node_modules
+jspm_packages
+# Serverless directories
+.serverless
+.requirements.*

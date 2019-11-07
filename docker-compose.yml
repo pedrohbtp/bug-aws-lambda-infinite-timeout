@@ -1,0 +1,15 @@
+version: '2.1'
+
+services:
+  bug-lambda-service:
+    image: bug-lambda-service
+    build: .
+    volumes:
+      - .:/usr/app/
+    env_file:
+      - aws_env.env
+    environment:
+      # needs this for deploying using windows
+    - VIRTUALENV_ALWAYS_COPY=1
+    command: python main.py
+

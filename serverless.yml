@@ -1,0 +1,26 @@
+service: bug-lambda-timeout
+
+package:
+  exclude:
+    - aws_env.env
+
+custom:
+  pythonRequirements:
+    zip: true
+    useDownloadCache: false
+    useStaticCache: false  
+
+plugins:
+  - serverless-python-requirements
+
+provider:
+  name: aws
+  runtime: python3.6
+  memorySize: 2048 # optional, in MB, default is 1024
+
+
+functions:
+  bug-lambda-event-function:
+    timeout: 3
+    handler: main.handler
+    description: lambda to test aws timeout bug
